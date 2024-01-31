@@ -54,6 +54,32 @@
             {% endfor %}
         </div>
         <!-- End of Products Space-->
+
+        <!--Previous Page-->
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <ul class="pagination">
+                    {% if product_objects.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ product_objects.previous_page_number }}">Previous</a>                            
+                        </li>
+                    {% endif %}
+
+                    <!--Current Page-->
+                    <li class="page-item active">
+                        <a class="page-link" href="?page={{ product_objects.number }}">Current</a>                            
+                    </li>
+                    <!--ENF OF Current Page-->
+
+                    <!--Next Page-->
+                    {% if product_objects.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ product_objects.next_page_number }}">Next</a>                            
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
